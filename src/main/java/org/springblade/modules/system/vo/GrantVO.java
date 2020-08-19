@@ -13,9 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springblade.modules.system.entity;
+package org.springblade.modules.system.vo;
 
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -23,38 +22,18 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * 用户信息
+ * GrantVO
  *
  * @author Chill
  */
 @Data
-@ApiModel(description = "用户信息")
-public class UserInfo implements Serializable {
-
+public class GrantVO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * 用户基础信息
-	 */
-	@ApiModelProperty(value = "用户")
-	private User user;
+	@ApiModelProperty(value = "roleIds集合")
+	private List<Long> roleIds;
 
-	/**
-	 * 权限标识集合
-	 */
-	@ApiModelProperty(value = "权限集合")
-	private List<String> permissions;
-
-	/**
-	 * 角色集合
-	 */
-	@ApiModelProperty(value = "角色集合")
-	private List<String> roles;
-
-	/**
-	 * 第三方授权id
-	 */
-	@ApiModelProperty(value = "第三方授权id")
-	private String oauthId;
+	@ApiModelProperty(value = "menuIds集合")
+	private List<Long> menuIds;
 
 }

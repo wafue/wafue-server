@@ -28,6 +28,7 @@ import org.springblade.core.tool.node.INode;
 import org.springblade.core.tool.utils.Func;
 import org.springblade.modules.system.entity.Role;
 import org.springblade.modules.system.service.IRoleService;
+import org.springblade.modules.system.vo.GrantVO;
 import org.springblade.modules.system.vo.RoleVO;
 import org.springblade.modules.system.wrapper.RoleWrapper;
 import org.springframework.web.bind.annotation.*;
@@ -114,17 +115,12 @@ public class RoleController extends BladeController {
 
 	/**
 	 * 设置菜单权限
-	 *
-	 * @param roleIds
-	 * @param menuIds
-	 * @return
 	 */
 	@PostMapping("/grant")
 	@ApiOperationSupport(order = 6)
 	@ApiOperation(value = "权限设置", notes = "传入roleId集合以及menuId集合")
-	public R grant(@ApiParam(value = "roleId集合", required = true) @RequestParam String roleIds,
-				   @ApiParam(value = "menuId集合", required = true) @RequestParam String menuIds) {
-		boolean temp = roleService.grant(Func.toLongList(roleIds), Func.toLongList(menuIds));
+	public R grant(@RequestBody GrantVO grantVO) {
+		boolean temp = roleService.grant(grantVO.getRoleIds(), grantVO.getMenuIds());
 		return R.status(temp);
 	}
 
