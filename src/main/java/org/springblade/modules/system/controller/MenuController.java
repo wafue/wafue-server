@@ -162,7 +162,7 @@ public class MenuController extends BladeController {
 	@ApiOperationSupport(order = 10)
 	@ApiOperation(value = "菜单的角色权限")
 	public R<List<Kv>> authRoutes(BladeUser user) {
-		if (Func.isEmpty(user)) {
+		if (Func.isEmpty(user) || user.getUserId() == 0L) {
 			return null;
 		}
 		return R.data(menuService.authRoutes(user));
