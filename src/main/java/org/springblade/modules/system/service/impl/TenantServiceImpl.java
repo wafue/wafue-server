@@ -21,17 +21,15 @@ import lombok.AllArgsConstructor;
 import org.springblade.core.boot.tenant.TenantId;
 import org.springblade.core.mp.base.BaseServiceImpl;
 import org.springblade.core.tool.constant.BladeConstant;
+import org.springblade.core.tool.utils.DigestUtil;
 import org.springblade.core.tool.utils.Func;
-import org.springblade.modules.system.entity.Dept;
-import org.springblade.modules.system.entity.Role;
-import org.springblade.modules.system.entity.Tenant;
-import org.springblade.modules.system.mapper.DeptMapper;
-import org.springblade.modules.system.mapper.RoleMapper;
-import org.springblade.modules.system.mapper.TenantMapper;
+import org.springblade.modules.system.entity.*;
+import org.springblade.modules.system.mapper.*;
 import org.springblade.modules.system.service.ITenantService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -47,6 +45,8 @@ public class TenantServiceImpl extends BaseServiceImpl<TenantMapper, Tenant> imp
 	private final TenantId tenantId;
 	private final RoleMapper roleMapper;
 	private final DeptMapper deptMapper;
+	private final PostMapper postMapper;
+	private final UserMapper userMapper;
 
 	@Override
 	public IPage<Tenant> selectTenantPage(IPage<Tenant> page, Tenant tenant) {
@@ -79,6 +79,28 @@ public class TenantServiceImpl extends BaseServiceImpl<TenantMapper, Tenant> imp
 			dept.setSort(2);
 			dept.setIsDeleted(0);
 			deptMapper.insert(dept);
+			// 新建租户对应的默认岗位
+			Post post = new Post();
+			post.setTenantId(tenantId);
+			post.setCategory(1);
+			post.setPostCode("ceo");
+			post.setPostName("首席执行官");
+			post.setSort(1);
+			postMapper.insert(post);
+			// 新建租户对应的默认管理用户
+			User user = new User();
+			user.setTenantId(tenantId);
+			user.setName("admin");
+			user.setRealName("admin");
+			user.setAccount("admin");
+			user.setPassword(DigestUtil.encrypt("admin"));
+			user.setRoleId(String.valueOf(role.getId()));
+			user.setDeptId(String.valueOf(dept.getId()));
+			user.setPostId(String.valueOf(post.getId()));
+			user.setBirthday(new Date());
+			user.setSex(1);
+			user.setIsDeleted(BladeConstant.DB_NOT_DELETED);
+			userMapper.insert(user);
 		}
 		return super.saveOrUpdate(tenant);
 	}
