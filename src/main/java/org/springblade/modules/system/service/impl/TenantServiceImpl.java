@@ -25,6 +25,7 @@ import org.springblade.core.tool.utils.DigestUtil;
 import org.springblade.core.tool.utils.Func;
 import org.springblade.modules.system.entity.*;
 import org.springblade.modules.system.mapper.*;
+import org.springblade.modules.system.service.IPostService;
 import org.springblade.modules.system.service.ITenantService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -45,7 +46,7 @@ public class TenantServiceImpl extends BaseServiceImpl<TenantMapper, Tenant> imp
 	private final TenantId tenantId;
 	private final RoleMapper roleMapper;
 	private final DeptMapper deptMapper;
-	private final PostMapper postMapper;
+	private final IPostService postService;
 	private final UserMapper userMapper;
 
 	@Override
@@ -86,7 +87,7 @@ public class TenantServiceImpl extends BaseServiceImpl<TenantMapper, Tenant> imp
 			post.setPostCode("ceo");
 			post.setPostName("首席执行官");
 			post.setSort(1);
-			postMapper.insert(post);
+			postService.save(post);
 			// 新建租户对应的默认管理用户
 			User user = new User();
 			user.setTenantId(tenantId);
