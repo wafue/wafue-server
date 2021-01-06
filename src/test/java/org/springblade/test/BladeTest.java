@@ -1,9 +1,9 @@
 package org.springblade.test;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springblade.core.test.BladeBootTest;
-import org.springblade.core.test.BladeSpringRunner;
+import org.springblade.core.test.BladeSpringExtension;
 import org.springblade.modules.desk.service.INoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  *
  * @author Chill
  */
-@RunWith(BladeSpringRunner.class)
+@ExtendWith(BladeSpringExtension.class)
 @BladeBootTest(appName = "blade-runner", profile = "test")
 public class BladeTest {
 
