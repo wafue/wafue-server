@@ -1,5 +1,5 @@
  <p align="center">
-      <img src="https://img.shields.io/badge/Release-V3.0.2-green.svg" alt="Downloads">
+      <img src="https://img.shields.io/badge/Release-V3.0.3-green.svg" alt="Downloads">
       <img src="https://img.shields.io/badge/JDK-1.8+-green.svg" alt="Build Status">
   <img src="https://img.shields.io/badge/license-Apache%202-blue.svg" alt="Build Status">
    <img src="https://img.shields.io/badge/Spring%20Cloud-2020-blue.svg" alt="Coverage Status">
@@ -27,6 +27,9 @@
 
 ## 架构图
 <img src="https://gitee.com/smallc/SpringBlade/raw/master/pic/springblade-framework.png"/>
+
+## 趋势图
+<a href="https://whnb.wang/smallc/SpringBlade" rel="nofollow"><img src="https://whnb.wang/img/smallc/SpringBlade" alt="Stargazers over time"></a>
 
 ## 工程结构
 ``` 
@@ -60,7 +63,8 @@ SpringBlade
 * 交流二群：`751253339`(满)
 * 交流三群：`784729540`(满)
 * 交流四群：`1034621754`(满)
-* 交流五群：`946350912`
+* 交流五群：`946350912`(满)
+* 交流六群：`511624269`
 
 ## 在线演示
 * Saber-基于Vue：[https://saber.bladex.vip](https://saber.bladex.vip)
@@ -69,8 +73,9 @@ SpringBlade
 * Caster-数据大屏展示系统：[https://data.avuejs.com](https://data.avuejs.com)
 
 ## 技术文档
+* [SpringBlade常见问题集锦](https://sns.bladex.vip/article-14966.html)
 * [SpringBlade开发手册一览](https://gitee.com/smallc/SpringBlade/wikis/SpringBlade开发手册)
-* [常见问题集锦](https://sns.bladex.vip/article-14966.html)
+* [SpringBlade基于Kuboard部署K8S](https://kuboard.cn/learning/k8s-practice/spring-blade/)
 
 ## 项目地址
 * 后端Gitee地址：[https://gitee.com/smallc/SpringBlade](https://gitee.com/smallc/SpringBlade)
@@ -88,7 +93,7 @@ Apache Licence是著名的非盈利开源组织Apache采用的协议。该协议
 * 如果你修改了代码，需要在被修改的文件中说明。
 * 在延伸的代码中（修改和有源代码衍生的代码中）需要带有原来代码中的协议，商标，专利声明和其他原来作者规定需要包含的说明。
 * 如果再发布的产品中包含一个Notice文件，则在Notice文件中需要带有Apache Licence。你可以在Notice中增加自己的许可，但不可以表现为对Apache Licence构成更改。
-Apache Licence也是对商业应用友好的许可。使用者也可以在需要的时候修改代码来满足需要并作为开源或商业产品发布/销售。
+  Apache Licence也是对商业应用友好的许可。使用者也可以在需要的时候修改代码来满足需要并作为开源或商业产品发布/销售。
 
 ## 用户权益
 * 允许免费用于学习、毕设、公司项目、私活等。
