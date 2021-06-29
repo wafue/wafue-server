@@ -19,7 +19,6 @@ package org.springblade.modules.system.service.impl;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.baomidou.mybatisplus.extension.exceptions.ApiException;
 import lombok.AllArgsConstructor;
 import org.springblade.common.constant.CommonConstant;
 import org.springblade.core.log.exception.ServiceException;
@@ -63,7 +62,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserMapper, User> implement
 		}
 		Integer cnt = baseMapper.selectCount(Wrappers.<User>query().lambda().eq(User::getTenantId, user.getTenantId()).eq(User::getAccount, user.getAccount()));
 		if (cnt > 0) {
-			throw new ApiException("当前用户已存在!");
+			throw new ServiceException("当前用户已存在!");
 		}
 		return saveOrUpdate(user);
 	}
@@ -190,11 +189,11 @@ public class UserServiceImpl extends BaseServiceImpl<UserMapper, User> implement
 	public boolean registerGuest(User user, Long oauthId) {
 		Tenant tenant = tenantService.getOne(Wrappers.<Tenant>lambdaQuery().eq(Tenant::getTenantId, user.getTenantId()));
 		if (tenant == null || tenant.getId() == null) {
-			throw new ApiException("租户信息错误!");
+			throw new ServiceException("租户信息错误!");
 		}
 		UserOauth userOauth = userOauthService.getById(oauthId);
 		if (userOauth == null || userOauth.getId() == null) {
-			throw new ApiException("第三方登陆信息错误!");
+			throw new ServiceException("第三方登陆信息错误!");
 		}
 		user.setRealName(user.getName());
 		user.setAvatar(userOauth.getAvatar());
