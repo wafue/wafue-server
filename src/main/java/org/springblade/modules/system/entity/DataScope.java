@@ -17,25 +17,25 @@ package org.springblade.modules.system.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-
-import java.io.Serializable;
+import lombok.EqualsAndHashCode;
+import org.springblade.core.mp.base.BaseEntity;
 
 /**
  * 实体类
  *
- * @author Chill
+ * @author BladeX
  */
 @Data
-@TableName("blade_dept")
-@ApiModel(value = "Dept对象", description = "Dept对象")
-public class Dept implements Serializable {
+@TableName("blade_scope_data")
+@EqualsAndHashCode(callSuper = true)
+@ApiModel(value = "DataScope对象", description = "DataScope对象")
+public class DataScope extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
 
@@ -48,54 +48,50 @@ public class Dept implements Serializable {
 	private Long id;
 
 	/**
-	 * 租户ID
+	 * 菜单主键
 	 */
-	@ApiModelProperty(value = "租户ID")
-	private String tenantId;
-
+	@ApiModelProperty(value = "菜单主键")
+	private Long menuId;
 	/**
-	 * 父主键
+	 * 资源编号
 	 */
-	@ApiModelProperty(value = "父主键")
-	@JsonSerialize(using = ToStringSerializer.class)
-	private Long parentId;
-
+	@ApiModelProperty(value = "资源编号")
+	private String resourceCode;
 	/**
-	 * 祖级机构主键
+	 * 数据权限名称
 	 */
-	@ApiModelProperty(value = "祖级机构主键")
-	private String ancestors;
-
+	@ApiModelProperty(value = "数据权限名称")
+	private String scopeName;
 	/**
-	 * 部门名
+	 * 数据权限可见字段
 	 */
-	@ApiModelProperty(value = "部门名")
-	private String deptName;
-
+	@ApiModelProperty(value = "数据权限可见字段")
+	private String scopeField;
 	/**
-	 * 部门全称
+	 * 数据权限类名
 	 */
-	@ApiModelProperty(value = "部门全称")
-	private String fullName;
-
+	@ApiModelProperty(value = "数据权限类名")
+	private String scopeClass;
 	/**
-	 * 排序
+	 * 数据权限字段
 	 */
-	@ApiModelProperty(value = "排序")
-	private Integer sort;
-
+	@ApiModelProperty(value = "数据权限字段")
+	private String scopeColumn;
 	/**
-	 * 备注
+	 * 数据权限类型
 	 */
-	@ApiModelProperty(value = "备注")
+	@ApiModelProperty(value = "数据权限类型")
+	private Integer scopeType;
+	/**
+	 * 数据权限值域
+	 */
+	@ApiModelProperty(value = "数据权限值域")
+	private String scopeValue;
+	/**
+	 * 数据权限备注
+	 */
+	@ApiModelProperty(value = "数据权限备注")
 	private String remark;
-
-	/**
-	 * 是否已删除
-	 */
-	@TableLogic
-	@ApiModelProperty(value = "是否已删除")
-	private Integer isDeleted;
 
 
 }

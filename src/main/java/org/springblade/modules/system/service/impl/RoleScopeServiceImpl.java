@@ -13,30 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springblade.modules.system.vo;
+package org.springblade.modules.system.service.impl;
 
-import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
-
-import java.io.Serializable;
-import java.util.List;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springblade.modules.system.entity.RoleScope;
+import org.springblade.modules.system.mapper.RoleScopeMapper;
+import org.springblade.modules.system.service.IRoleScopeService;
+import org.springframework.stereotype.Service;
 
 /**
- * GrantVO
+ * 服务实现类
  *
  * @author Chill
  */
-@Data
-public class GrantVO implements Serializable {
-	private static final long serialVersionUID = 1L;
-
-	@ApiModelProperty(value = "roleIds集合")
-	private List<Long> roleIds;
-
-	@ApiModelProperty(value = "menuIds集合")
-	private List<Long> menuIds;
-
-	@ApiModelProperty(value = "dataScopeIds集合")
-	private List<Long> dataScopeIds;
+@Service
+public class RoleScopeServiceImpl extends ServiceImpl<RoleScopeMapper, RoleScope> implements IRoleScopeService {
 
 }

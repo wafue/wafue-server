@@ -15,28 +15,24 @@
  */
 package org.springblade.modules.system.vo;
 
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
-
-import java.io.Serializable;
-import java.util.List;
+import lombok.EqualsAndHashCode;
+import org.springblade.modules.system.entity.DataScope;
 
 /**
- * GrantVO
+ * 视图实体类
  *
  * @author Chill
  */
 @Data
-public class GrantVO implements Serializable {
+@EqualsAndHashCode(callSuper = true)
+@ApiModel(value = "DataScopeVO对象", description = "DataScopeVO对象")
+public class DataScopeVO extends DataScope {
 	private static final long serialVersionUID = 1L;
 
-	@ApiModelProperty(value = "roleIds集合")
-	private List<Long> roleIds;
-
-	@ApiModelProperty(value = "menuIds集合")
-	private List<Long> menuIds;
-
-	@ApiModelProperty(value = "dataScopeIds集合")
-	private List<Long> dataScopeIds;
-
+	/**
+	 * 规则类型名
+	 */
+	private String scopeTypeName;
 }

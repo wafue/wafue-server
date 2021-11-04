@@ -21,7 +21,7 @@ public class BladeTest {
 
 	@Test
 	public void contextLoads() {
-		int count = noticeService.count();
+		Long count = noticeService.count();
 		System.out.println("notice数量：[" + count + "] 个");
 	}
 
