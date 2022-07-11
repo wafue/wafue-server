@@ -7,20 +7,20 @@
     <groupId>org.springblade</groupId>
     <artifactId>SpringBlade</artifactId>
     <packaging>jar</packaging>
-    <version>3.3.1</version>
+    <version>3.4.0</version>
 
     <properties>
-        <blade.tool.version>3.3.1</blade.tool.version>
+        <blade.tool.version>3.4.0</blade.tool.version>
 
         <java.version>1.8</java.version>
 
         <knife4j.version>2.0.9</knife4j.version>
-        <mybatis.plus.version>3.5.1</mybatis.plus.version>
+        <mybatis.plus.version>3.5.2</mybatis.plus.version>
         <protostuff.version>1.6.0</protostuff.version>
         <captcha.version>1.6.2</captcha.version>
         <easyexcel.version>2.2.6</easyexcel.version>
 
-        <spring.boot.version>2.6.6</spring.boot.version>
+        <spring.boot.version>2.7.1</spring.boot.version>
         <spring.plugin.version>2.0.0.RELEASE</spring.plugin.version>
         <spring.platform.version>Cairo-SR8</spring.platform.version>
 

@@ -142,6 +142,8 @@ public class CodeController extends BladeController {
 			generator.setIncludeTables(Func.toStrArray(code.getTableName()));
 			// 设置是否继承基础业务字段
 			generator.setHasSuperEntity(code.getBaseMode() == 2);
+			// 控制器添加服务名前缀
+			generator.setHasServiceName(Boolean.TRUE);
 			// 设置是否开启包装器模式
 			generator.setHasWrapper(code.getWrapMode() == 2);
 			generator.run();
