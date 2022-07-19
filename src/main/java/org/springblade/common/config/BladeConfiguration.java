@@ -47,10 +47,6 @@ public class BladeConfiguration implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/js/**").addResourceLocations("classpath:/js/");
-		registry.addResourceHandler("doc.html")
-			.addResourceLocations("classpath:/META-INF/resources/");
-		registry.addResourceHandler("/webjars/**")
-			.addResourceLocations("classpath:/META-INF/resources/webjars/");
 	}
 
 }
