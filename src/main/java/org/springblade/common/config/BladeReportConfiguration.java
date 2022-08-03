@@ -16,9 +16,9 @@
 package org.springblade.common.config;
 
 import org.springblade.core.report.datasource.ReportDataSource;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
@@ -27,7 +27,7 @@ import javax.sql.DataSource;
  *
  * @author Chill
  */
-@AutoConfiguration
+@Configuration(proxyBeanMethods = false)
 @ConditionalOnProperty(value = "report.enabled", havingValue = "true", matchIfMissing = true)
 public class BladeReportConfiguration {
 

@@ -25,16 +25,16 @@ import org.springblade.core.log.event.ErrorLogListener;
 import org.springblade.core.log.event.UsualLogListener;
 import org.springblade.core.log.logger.BladeLogger;
 import org.springblade.modules.system.service.ILogService;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * 日志工具自动配置
  *
  * @author Chill
  */
-@AutoConfiguration
+@Configuration(proxyBeanMethods = false)
 @AllArgsConstructor
 @ConditionalOnWebApplication
 public class BladeLogToolAutoConfiguration {
