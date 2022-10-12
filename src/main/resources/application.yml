@@ -147,6 +147,8 @@ social:
 
 #blade配置
 blade:
+  token:
+    sign-key: 请配置32位签名提高安全性
   xss:
     enabled: true
     skip-url:
@@ -165,3 +167,4 @@ blade:
     column: tenant_id
     tables:
       - blade_notice
+
