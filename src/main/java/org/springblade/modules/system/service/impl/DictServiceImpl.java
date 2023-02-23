@@ -30,11 +30,9 @@ import org.springblade.modules.system.vo.DictVO;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springblade.common.cache.CacheNames;
 
 import java.util.List;
-
-import static org.springblade.common.cache.CacheNames.DICT_LIST;
-import static org.springblade.common.cache.CacheNames.DICT_VALUE;
 
 /**
  * 服务实现类
@@ -55,19 +53,19 @@ public class DictServiceImpl extends ServiceImpl<DictMapper, Dict> implements ID
 	}
 
 	@Override
-	@Cacheable(cacheNames = DICT_VALUE, key = "#code+'_'+#dictKey")
+	@Cacheable(cacheNames = CacheNames.DICT_VALUE, key = "#code+'_'+#dictKey")
 	public String getValue(String code, Integer dictKey) {
 		return Func.toStr(baseMapper.getValue(code, dictKey), StringPool.EMPTY);
 	}
 
 	@Override
-	@Cacheable(cacheNames = DICT_LIST, key = "#code")
+	@Cacheable(cacheNames = CacheNames.DICT_LIST, key = "#code")
 	public List<Dict> getList(String code) {
 		return baseMapper.getList(code);
 	}
 
 	@Override
-	@CacheEvict(cacheNames = {DICT_LIST, DICT_VALUE}, allEntries = true)
+	@CacheEvict(cacheNames = {CacheNames.DICT_LIST, CacheNames.DICT_VALUE}, allEntries = true)
 	public boolean submit(Dict dict) {
 		LambdaQueryWrapper<Dict> lqw = Wrappers.<Dict>query().lambda().eq(Dict::getCode, dict.getCode()).eq(Dict::getDictKey, dict.getDictKey());
 		Long cnt = baseMapper.selectCount((Func.isEmpty(dict.getId())) ? lqw : lqw.notIn(Dict::getId, dict.getId()));

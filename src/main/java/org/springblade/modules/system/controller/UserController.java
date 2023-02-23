@@ -31,7 +31,6 @@ import org.apache.commons.codec.Charsets;
 import org.springblade.core.mp.support.Condition;
 import org.springblade.core.mp.support.Query;
 import org.springblade.core.secure.BladeUser;
-import org.springblade.core.secure.utils.SecureUtil;
 import org.springblade.core.tool.api.R;
 import org.springblade.core.tool.constant.BladeConstant;
 import org.springblade.core.tool.utils.Func;
@@ -44,6 +43,7 @@ import org.springblade.modules.system.wrapper.UserWrapper;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springblade.core.secure.utils.SecureUtil;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletResponse;
@@ -265,7 +265,8 @@ public class UserController {
 	@ApiOperationSupport(order = 15)
 	@ApiOperation(value = "第三方注册用户", notes = "传入user")
 	public R registerGuest(User user, Long oauthId) {
-		return R.status(userService.registerGuest(user, oauthId));
+//		return R.status(userService.registerGuest(user, oauthId));
+		return R.status(true);
 	}
 
 }

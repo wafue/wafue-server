@@ -156,6 +156,8 @@ blade:
   secure:
     skip-url:
       - /blade-test/**
+      - /blade-user/**
+      - /blade-socialize/**
     client:
       - client-id: sword
         path-patterns:

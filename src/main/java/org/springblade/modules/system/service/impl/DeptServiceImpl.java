@@ -19,7 +19,6 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springblade.core.log.exception.ServiceException;
-import org.springblade.core.secure.utils.SecureUtil;
 import org.springblade.core.tool.constant.BladeConstant;
 import org.springblade.core.tool.node.ForestNodeMerger;
 import org.springblade.core.tool.utils.CacheUtil;
@@ -30,6 +29,7 @@ import org.springblade.modules.system.mapper.DeptMapper;
 import org.springblade.modules.system.service.IDeptService;
 import org.springblade.modules.system.vo.DeptVO;
 import org.springframework.stereotype.Service;
+import org.springblade.core.secure.utils.SecureUtil;
 
 import java.util.List;
 import java.util.stream.Collectors;

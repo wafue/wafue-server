@@ -24,11 +24,14 @@ import org.springblade.core.tool.constant.BladeConstant;
 import org.springblade.core.tool.utils.DigestUtil;
 import org.springblade.core.tool.utils.Func;
 import org.springblade.modules.system.entity.*;
-import org.springblade.modules.system.mapper.*;
 import org.springblade.modules.system.service.IPostService;
 import org.springblade.modules.system.service.ITenantService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springblade.modules.system.mapper.DeptMapper;
+import org.springblade.modules.system.mapper.RoleMapper;
+import org.springblade.modules.system.mapper.TenantMapper;
+import org.springblade.modules.system.mapper.UserMapper;
 
 import java.util.Date;
 import java.util.List;

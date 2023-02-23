@@ -18,13 +18,13 @@ package org.springblade.common.config;
 import com.github.xiaoymin.knife4j.spring.extension.OpenApiExtensionResolver;
 import com.google.common.collect.Lists;
 import lombok.AllArgsConstructor;
-import org.springblade.core.launch.constant.AppConstant;
 import org.springblade.core.secure.BladeUser;
 import org.springblade.core.swagger.EnableSwagger;
 import org.springblade.core.swagger.SwaggerProperties;
 import org.springblade.core.swagger.SwaggerUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springblade.common.constant.CommonConstant;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.service.*;
@@ -58,18 +58,24 @@ public class SwaggerConfiguration {
 
 	@Bean
 	public Docket deskDocket() {
-		return docket("工作台模块", Collections.singletonList(AppConstant.BASE_PACKAGES + ".modules.desk"));
+		return docket("工作台模块", Collections.singletonList(CommonConstant.BASE_PACKAGES + ".modules.desk"));
 	}
 
 	@Bean
 	public Docket authDocket() {
-		return docket("授权模块", Collections.singletonList(AppConstant.BASE_PACKAGES + ".modules.auth"));
+		return docket("授权模块", Collections.singletonList(CommonConstant.BASE_PACKAGES + ".modules.auth"));
 	}
 
 	@Bean
 	public Docket sysDocket() {
 		return docket("系统模块",
-			Arrays.asList(AppConstant.BASE_PACKAGES + ".modules.system", AppConstant.BASE_PACKAGES + ".modules.resource"));
+			Arrays.asList(CommonConstant.BASE_PACKAGES + ".modules.system", CommonConstant.BASE_PACKAGES + ".modules.resource"));
+	}
+
+	@Bean
+	public Docket socDocket() {
+		return docket("社交模块",
+			Arrays.asList(CommonConstant.BASE_PACKAGES + ".wasuper.socialize", CommonConstant.BASE_PACKAGES + ".wasuper.socialize"));
 	}
 
 	private Docket docket(String groupName, List<String> basePackages) {

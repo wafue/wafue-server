@@ -2,9 +2,9 @@
 spring:
   redis:
     ##redis 单机环境配置
-    host: 127.0.0.1
+    host: 8.222.129.203
     port: 6379
-    password:
+    password: root
     database: 0
     ssl: false
     ##redis 集群环境配置
@@ -12,10 +12,12 @@ spring:
     #  nodes: 127.0.0.1:7001,127.0.0.1:7002,127.0.0.1:7003
     #  commandTimeout: 5000
   datasource:
-    url: jdbc:mysql://localhost:3306/blade?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://8.222.129.203:3306/blade?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8
     username: root
-    password: root
+    password: Admin1234!
     driver-class-name: com.mysql.cj.jdbc.Driver
+    
+
 
 #第三方登陆
 social:

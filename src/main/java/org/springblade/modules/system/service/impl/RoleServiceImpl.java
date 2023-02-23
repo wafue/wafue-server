@@ -19,7 +19,6 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.AllArgsConstructor;
-import org.springblade.core.secure.utils.SecureUtil;
 import org.springblade.core.tool.constant.RoleConstant;
 import org.springblade.core.tool.node.ForestNodeMerger;
 import org.springblade.core.tool.utils.CollectionUtil;
@@ -34,6 +33,7 @@ import org.springblade.modules.system.service.IRoleService;
 import org.springblade.modules.system.vo.RoleVO;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
+import org.springblade.core.secure.utils.SecureUtil;
 
 import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;

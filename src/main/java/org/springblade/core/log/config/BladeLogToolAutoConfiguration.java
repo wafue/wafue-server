@@ -22,12 +22,12 @@ import org.springblade.core.launch.server.ServerInfo;
 import org.springblade.core.log.aspect.ApiLogAspect;
 import org.springblade.core.log.event.ApiLogListener;
 import org.springblade.core.log.event.ErrorLogListener;
-import org.springblade.core.log.event.UsualLogListener;
 import org.springblade.core.log.logger.BladeLogger;
 import org.springblade.modules.system.service.ILogService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springblade.core.log.event.UsualLogListener;
 
 /**
  * 日志工具自动配置
@@ -64,7 +64,7 @@ public class BladeLogToolAutoConfiguration {
 	}
 
 	@Bean
-	public UsualLogListener bladeEventListener() {
+	public org.springblade.core.log.event.UsualLogListener bladeEventListener() {
 		return new UsualLogListener(logService, serverInfo, bladeProperties);
 	}
 

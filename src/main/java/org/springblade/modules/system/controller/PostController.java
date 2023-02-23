@@ -27,7 +27,6 @@ import org.springblade.core.launch.constant.AppConstant;
 import org.springblade.core.mp.support.Condition;
 import org.springblade.core.mp.support.Query;
 import org.springblade.core.secure.BladeUser;
-import org.springblade.core.secure.utils.SecureUtil;
 import org.springblade.core.tool.api.R;
 import org.springblade.core.tool.utils.Func;
 import org.springblade.modules.system.entity.Post;
@@ -35,6 +34,7 @@ import org.springblade.modules.system.service.IPostService;
 import org.springblade.modules.system.vo.PostVO;
 import org.springblade.modules.system.wrapper.PostWrapper;
 import org.springframework.web.bind.annotation.*;
+import org.springblade.core.secure.utils.SecureUtil;
 
 import javax.validation.Valid;
 import java.util.List;

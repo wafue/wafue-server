@@ -47,4 +47,6 @@ public interface CommonConstant {
 	 */
 	String DEFAULT_PASSWORD = "123456";
 
+	String BASE_PACKAGES = "org.springblade";
+
 }
